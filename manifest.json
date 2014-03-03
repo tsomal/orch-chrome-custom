@@ -1,0 +1,16 @@
+{
+  "name": "Orchestration Team Customization",
+  "version": "0.0.1",
+  "description": "Add standard checklist items for code review",
+  "manifest_version": 2,
+  "options_page": "options.html",
+  "content_scripts": [{
+      "matches": [
+        "https://github.com/tsomal/git-test/compare/*", "https://hub.ehi.com/login.jspa?referer=%252Findex.jspa" 
+      ],
+      "run_at": "document_end",
+      "css": ["css/orchcustom.css"],
+      "js": ["js/vendor/jquery-1.9.1.min.js", "js/orchCustom.js"]
+    }]
+} 
+

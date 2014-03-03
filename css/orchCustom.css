@@ -1,0 +1,27 @@
+.word-wrap .diff-line-code{
+  white-space: normal;
+}
+
+.container.large {
+  width: 98%;
+}
+
+.container.large .repository-content {
+  width: 95%
+}
+
+/* old repository version */
+.container.large {
+  width: 95%;
+}
+
+.octosplit-checkbox {
+  margin-left: 5px;
+}
+
+.orch-label {
+   margin-left: 5px;
+   color: #6cc644;
+   font: normal 14px octicons;
+}
+
