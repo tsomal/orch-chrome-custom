@@ -10,25 +10,18 @@ function addChecklistCheckbox() {
           var body = $('#pull_request_body');
 
           //TODO: Externalize this information
-          var desc = 'Description of changes made for this pull request : \n\n';
-          var myString = ['Checklist : ',
-                          '\n\n\t 1) CROS design document impacted?', 
-                          '\n\t    >> ',
-                          '\n \t  2) README.md impacted?',
-                          '\n\t    >> ',
-                          '\n \t  3) Javadocs updated?',
-                          '\n\t    >> ',
-                          '\n \t  4) JUnit tests needed?',
-                          '\n\t    >> ',
-                          '\n \t  5) Ran all JUnit tests locally?',
-                          '\n\t    >> \n'  
-                          ].join('');
+          var desc = 'Description of changes for this pull request : \n\t\n\n';
+          var reviewers = "Reviewer(s): @dmhenry @rbmueller @jpgrant @tsomal @jmagas @guowendai @sturose";
 
-          // var reviewers = [ 'Reviewers :',
-          //                   '\n\t @dmhenry @rbmueller @jpgrant @tsomal @jmagas @guowendai @sturose'
-          //              ].join('');   
-          var reviewers = " @dmhenry @rbmueller @jpgrant @tsomal @jmagas @guowendai @sturose";          
-          body.val(desc.concat(myString).concat("\n").concat(reviewers));
+          var checklist = ['Checklist : ',
+                            '1) Update CROS design document if impacted', 
+                            '2) Update README.md if impacted',                          
+                            '3) Make sure Javadocs are updated',                          
+                            '4) Add JUnit tests if needed',                          
+                            '5) Ran all JUnit tests locally',                          
+                          ].join('\n');
+         
+          body.val(desc.concat(reviewers).concat('\n\n').concat(checklist).concat("\n"));
 
     } else {
         // Do nothing. Preserve content in text area
@@ -48,5 +41,4 @@ function addOneCCheckbox(id, labelInner, clickFn, checked) {
 
 function fixHub() {
   $('#username01').val("e9002z");
-  
 }
